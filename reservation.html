@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Bàn - Tiệm Cafe Bất Ổn</title>
+
+    <!-- Link nhúng icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link file CSS giao diện chung và CSS riêng trang Đặt bàn -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reservation.css">
+</head>
+<body>
+
+    <!-- HEADER DÙNG CHUNG -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-mug-hot"></i> Cafe Bất Ổn
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="menu.html">Thực đơn</a></li>
+                    <li><a href="reservation.html">Đặt bàn</a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-user"></i> Đăng nhập</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="window.location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng 
+                <span id="cart-badge" class="cart-badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- KHU VỰC LÀM VIỆC: TRANG ĐẶT BÀN -->
+    <main>
+        <div class="rsv-intro">
+            <h1>Đặt bàn trước</h1>
+            <p>Giữ chỗ trước để không phải chờ khi đến quán. Quán mở cửa từ 7:00 đến 22:00 mỗi ngày.</p>
+        </div>
+
+        <div class="rsv-layout">
+            <!-- Form đặt bàn -->
+            <section class="rsv-card">
+                <h2>Thông tin đặt bàn</h2>
+
+                <form id="reservation-form" novalidate>
+                    <div class="rsv-row">
+                        <div class="rsv-field">
+                            <label for="rsv-name">Họ và tên</label>
+                            <input type="text" id="rsv-name" name="name" placeholder="Nguyễn Văn A" autocomplete="name">
+                            <small class="rsv-error" id="err-name"></small>
+                        </div>
+                        <div class="rsv-field">
+                            <label for="rsv-phone">Số điện thoại</label>
+                            <input type="tel" id="rsv-phone" name="phone" placeholder="0912345678" autocomplete="tel">
+                            <small class="rsv-error" id="err-phone"></small>
+                        </div>
+                    </div>
+
+                    <div class="rsv-field">
+                        <label for="rsv-email">Email (không bắt buộc)</label>
+                        <input type="email" id="rsv-email" name="email" placeholder="ban@example.com" autocomplete="email">
+                        <small class="rsv-error" id="err-email"></small>
+                    </div>
+
+                    <div class="rsv-row">
+                        <div class="rsv-field">
+                            <label for="rsv-date">Ngày đến</label>
+                            <input type="date" id="rsv-date" name="date">
+                            <small class="rsv-error" id="err-date"></small>
+                        </div>
+                        <div class="rsv-field">
+                            <label for="rsv-time">Giờ đến</label>
+                            <select id="rsv-time" name="time">
+                                <option value="">-- Chọn giờ --</option>
+                            </select>
+                            <small class="rsv-error" id="err-time"></small>
+                        </div>
+                    </div>
+
+                    <div class="rsv-row">
+                        <div class="rsv-field">
+                            <label for="rsv-guests">Số người</label>
+                            <input type="number" id="rsv-guests" name="guests" min="1" max="20" value="2">
+                            <small class="rsv-error" id="err-guests"></small>
+                        </div>
+                        <div class="rsv-field">
+                            <label for="rsv-area">Khu vực</label>
+                            <select id="rsv-area" name="area">
+                                <option value="Trong nhà">Trong nhà (máy lạnh)</option>
+                                <option value="Ngoài trời">Ngoài trời / sân vườn</option>
+                                <option value="Phòng riêng">Phòng riêng (từ 6 người)</option>
+                            </select>
+                            <small class="rsv-error" id="err-area"></small>
+                        </div>
+                    </div>
+
+                    <div class="rsv-field">
+                        <label for="rsv-note">Ghi chú</label>
+                        <textarea id="rsv-note" name="note" rows="3" placeholder="VD: sinh nhật, cần ghế trẻ em, muốn chỗ yên tĩnh..."></textarea>
+                    </div>
+
+                    <button type="submit" class="rsv-btn">
+                        <i class="fa-solid fa-calendar-check"></i> Xác nhận đặt bàn
+                    </button>
+                </form>
+
+                <!-- Thông báo thành công -->
+                <div id="rsv-success" class="rsv-success" hidden>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <div>
+                        <strong>Đặt bàn thành công!</strong>
+                        <p id="rsv-success-text"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Danh sách các lượt đặt bàn đã tạo -->
+            <aside class="rsv-card">
+                <h2>Lịch đặt bàn của bạn</h2>
+                <p id="rsv-empty" class="rsv-empty">Bạn chưa có lượt đặt bàn nào.</p>
+                <ul id="rsv-list" class="rsv-list"></ul>
+            </aside>
+        </div>
+    </main>
+
+    <!-- FOOTER DÙNG CHUNG -->
+    <footer>
+        <p>&copy; 2026 Tiệm Cafe Bất Ổn. Bài tập lớn Quản lý quán Cafe.</p>
+    </footer>
+
+    <!-- Nhúng file Javascript riêng của Đặt bàn và file chung -->
+    <script src="js/reservation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

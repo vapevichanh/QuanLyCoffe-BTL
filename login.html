@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Tiệm Cafe Bất Ổn</title>
+    
+    <!-- Nhúng thư viện Icon (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Nhúng file CSS chung và CSS riêng trang Đăng nhập -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <!-- HEADER DÙNG CHUNG -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-mug-hot"></i> Cafe Bất Ổn
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="menu.html">Thực đơn</a></li>
+                    <li><a href="reservation.html">Đặt bàn</a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-user"></i> Đăng nhập</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="window.location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng 
+                <span id="cart-badge" class="cart-badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="login-wrapper">
+        <div class="login-auth-container">
+            
+            <!-- FORM ĐĂNG NHẬP -->
+            <div id="form-login" class="login-auth-form active">
+                <div class="login-auth-header">
+                    <h2>Đăng Nhập</h2>
+                    <p>Chào mừng bạn quay lại Tiệm Cafe Bất Ổn!</p>
+                </div>
+                <form id="loginForm">
+                    <div class="login-input-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="loginUsername" placeholder="Tên đăng nhập..." required>
+                    </div>
+                    <div class="login-input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Mật khẩu..." required>
+                    </div>
+                    <button type="submit" class="login-btn-auth">Đăng nhập</button>
+                    
+                    <div class="login-auth-switch">
+                        <span>Bạn chưa có tài khoản? </span>
+                        <a href="#" id="switchToRegister">Đăng ký ngay</a>
+                    </div>
+                </form>
+                
+                <!-- Gợi ý test cho hội đồng chấm điểm -->
+                <div style="margin-top:20px; font-size: 13px; color: #888; text-align:center;">
+                    <i>Tài khoản Admin test: chuquan / 123</i>
+                </div>
+            </div>
+
+            <!-- FORM ĐĂNG KÝ (Mặc định ẩn) -->
+            <div id="form-register" class="login-auth-form" style="display: none;">
+                <div class="login-auth-header">
+                    <h2>Đăng Ký Mới</h2>
+                    <p>Tạo tài khoản để đặt bàn và tích điểm</p>
+                </div>
+                <form id="registerForm">
+                    <div class="login-input-group">
+                        <i class="fa-solid fa-address-card"></i>
+                        <input type="text" id="regFullName" placeholder="Họ và tên..." required>
+                    </div>
+                    <div class="login-input-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="regUsername" placeholder="Tên đăng nhập..." required>
+                    </div>
+                    <div class="login-input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="regPassword" placeholder="Mật khẩu..." required>
+                    </div>
+                    <button type="submit" class="login-btn-auth">Tạo tài khoản</button>
+
+                    <div class="login-auth-switch">
+                        <span>Đã có tài khoản? </span>
+                        <a href="#" id="switchToLogin">Đăng nhập</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- CHÂN TRANG -->
+    <footer class="global-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Tiệm Cafe Bất Ổn. Thiết kế bởi Nhóm của bạn.</p>
+        </div>
+    </footer>
+
+    <!-- Nhúng file Javascript riêng của Đăng nhập và file chung -->
+    <script src="js/login.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

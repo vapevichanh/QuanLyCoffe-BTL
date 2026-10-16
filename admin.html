@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị - Tiệm Cafe Bất Ổn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- HEADER DÙNG CHUNG -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-mug-hot"></i> Cafe Bất Ổn
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="menu.html">Thực đơn</a></li>
+                    <li><a href="reservation.html">Đặt bàn</a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-user"></i> Đăng nhập</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="window.location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng 
+                <span id="cart-badge" class="cart-badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 style="margin-bottom:20px">Trang Quản Trị</h1>
+
+        <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="staff">Nhân viên</button>
+            <button class="admin-tab" data-tab="inventory">Kho hàng</button>
+            <button class="admin-tab" data-tab="menu">Thực đơn &amp; giá</button>
+            <button class="admin-tab" data-tab="revenue">Doanh thu</button>
+        </div>
+
+        <!-- NHÂN VIÊN -->
+        <section id="tab-staff" class="admin-panel active">
+            <h2>Nhân viên</h2>
+            <div class="admin-form">
+                <input id="staff-name" placeholder="Họ tên">
+                <input id="staff-role" placeholder="Chức vụ">
+                <input id="staff-phone" placeholder="SĐT">
+                <button class="admin-btn" onclick="addStaff()">Thêm</button>
+            </div>
+            <table class="admin-table"><thead><tr><th>Họ tên</th><th>Chức vụ</th><th>SĐT</th><th></th></tr></thead><tbody id="staff-body"></tbody></table>
+        </section>
+
+        <!-- KHO HÀNG -->
+        <section id="tab-inventory" class="admin-panel">
+            <h2>Kho hàng</h2>
+            <div class="admin-form">
+                <input id="inv-name" placeholder="Tên nguyên liệu">
+                <input id="inv-qty" type="number" placeholder="Số lượng">
+                <input id="inv-unit" placeholder="Đơn vị (kg, hộp...)">
+                <button class="admin-btn" onclick="addInventory()">Thêm</button>
+            </div>
+            <table class="admin-table"><thead><tr><th>Nguyên liệu</th><th>Số lượng</th><th>Đơn vị</th><th></th></tr></thead><tbody id="inv-body"></tbody></table>
+        </section>
+
+        <!-- THỰC ĐƠN & GIÁ -->
+        <section id="tab-menu" class="admin-panel">
+            <h2>Thực đơn &amp; giá món</h2>
+            <div class="admin-form">
+                <input id="menu-name" placeholder="Tên món">
+                <input id="menu-price" type="number" placeholder="Giá (đ)">
+                <select id="menu-cat">
+                    <option value="coffee">Cà Phê</option>
+                    <option value="tea">Trà &amp; Macchiato</option>
+                    <option value="cake">Bánh Ngọt</option>
+                </select>
+                <button class="admin-btn" onclick="addMenuItem()">Thêm món</button>
+            </div>
+            <table class="admin-table"><thead><tr><th>Tên món</th><th>Giá</th><th>Loại</th><th></th></tr></thead><tbody id="menu-body"></tbody></table>
+        </section>
+
+        <!-- DOANH THU -->
+        <section id="tab-revenue" class="admin-panel">
+            <h2>Doanh thu hôm nay</h2>
+            <p>Số đơn: <b id="rev-count">0</b></p>
+            <p>Tổng doanh thu:</p>
+            <div class="stat-box" id="rev-total">0 đ</div>
+        </section>
+    </main>
+
+    <footer class="global-footer">
+        <div class="footer-content"><p>&copy; 2026 Tiệm Cafe Bất Ổn.</p></div>
+    </footer>
+
+    <!-- Nhúng menu.js để lấy dữ liệu món ăn gốc, sau đó đến admin.js và main.js -->
+    <script src="js/menu.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

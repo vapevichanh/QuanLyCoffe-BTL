@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Tiệm Cafe Bất Ổn</title>
+    
+    <!-- Link nhúng icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link file CSS giao diện chung và CSS riêng trang Giỏ hàng -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+    <!-- HEADER DÙNG CHUNG (Đã đồng bộ) -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-mug-hot"></i> Cafe Bất Ổn
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="menu.html">Thực đơn</a></li>
+                    <li><a href="reservation.html">Đặt bàn</a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-user"></i> Đăng nhập</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="window.location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng 
+                <span id="cart-badge" class="cart-badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG TRANG GIỎ HÀNG -->
+    <main>
+        <div class="cart-page-wrapper">
+            <h2 class="cart-title">Giỏ Hàng Của Bạn</h2>
+            
+            <div class="cart-layout">
+                <!-- Cột trái: Danh sách sản phẩm -->
+                <div class="cart-items-section">
+                    <div id="cart-items-container">
+                        <!-- JS sẽ render sản phẩm vào đây -->
+                    </div>
+                    <button id="btn-clear-cart" class="btn-danger" style="display: none;" onclick="clearCart()">Xóa toàn bộ giỏ hàng</button>
+                </div>
+
+                <!-- Cột phải: Tổng tiền & Form thanh toán -->
+                <div class="checkout-section">
+                    <div class="order-summary">
+                        <h3>Tổng Đơn Hàng</h3>
+                        <div class="summary-row">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal-price">0 đ</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Phí giao hàng:</span>
+                            <span id="shipping-fee">0 đ</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Tổng thanh toán:</span>
+                            <span id="final-total">0 đ</span>
+                        </div>
+                    </div>
+
+                    <div class="checkout-form-container">
+                        <h3>Thông Tin Giao Hàng</h3>
+                        <form id="checkout-form">
+                            <div class="form-group">
+                                <label for="cus-name">Họ và tên (*)</label>
+                                <input type="text" id="cus-name" placeholder="Nhập họ tên người nhận">
+                                <small class="error-text" id="err-name"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cus-phone">Số điện thoại (*)</label>
+                                <input type="tel" id="cus-phone" placeholder="Nhập số điện thoại">
+                                <small class="error-text" id="err-phone"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cus-address">Địa chỉ giao hàng (*)</label>
+                                <input type="text" id="cus-address" placeholder="Số nhà, tên đường, phường/xã...">
+                                <small class="error-text" id="err-address"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cus-note">Ghi chú</label>
+                                <textarea id="cus-note" rows="3" placeholder="Ghi chú cho quán..."></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit-order">Xác Nhận Đặt Hàng</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER DÙNG CHUNG -->
+    <footer>
+        <p>&copy; 2026 Tiệm Cafe Bất Ổn. Bài tập lớn Quản lý quán Cafe.</p>
+    </footer>
+
+    <!-- Nhúng file Javascript riêng của Giỏ hàng và file chung -->
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+/* ================= 7. CSS TRANG QUẢN TRỊ (admin.html) ================= */
+.admin-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+.admin-tab { padding: 10px 20px; border: 1px solid #E6DCD2; background: #fff; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.admin-tab.active { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+.admin-panel { display: none; background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #E6DCD2; }
+.admin-panel.active { display: block; }
+.admin-panel h2 { margin-bottom: 15px; color: var(--primary-color); }
+.admin-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
+.admin-table th, .admin-table td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+.admin-form { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
+.admin-form input, .admin-form select { padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+.admin-btn { padding: 10px 16px; border: none; border-radius: 6px; background: var(--accent-color); color: #fff; cursor: pointer; }
+.admin-btn.del { background: #c0392b; padding: 6px 10px; }
+.stat-box { font-size: 2rem; font-weight: 800; color: var(--accent-color); }

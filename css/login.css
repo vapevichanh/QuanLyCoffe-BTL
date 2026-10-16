@@ -1,0 +1,109 @@
+/* ================= 6. CSS TRANG ĐĂNG NHẬP (login.html) ================= */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 180px);
+    padding: 40px 20px;
+}
+
+.login-auth-container {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 1px solid #E6DCD2;
+    overflow: hidden;
+    padding: 40px 30px;
+}
+
+.login-auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-auth-header h2 {
+    color: var(--primary-color);
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.login-auth-header p {
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.login-input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.login-input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #95a5a6;
+}
+
+.login-input-group input {
+    width: 100%;
+    padding: 14px 15px 14px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: var(--transition);
+}
+
+.login-input-group input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(178, 83, 41, 0.1);
+}
+
+.login-btn-auth {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.login-btn-auth:hover {
+    background-color: var(--secondary-color);
+}
+
+.login-auth-switch {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-auth-switch a {
+    color: var(--accent-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.login-auth-switch a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.login-auth-form {
+    animation: slideUpFade 0.4s ease;
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}

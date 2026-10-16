@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Tiệm Cafe Bất Ổn</title>
+    
+    <!-- Link nhúng icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link file CSS giao diện chung & trang chủ -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER DÙNG CHUNG -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-mug-hot"></i> Cafe Bất Ổn
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="menu.html">Thực đơn</a></li>
+                    <li><a href="reservation.html">Đặt bàn</a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-user"></i> Đăng nhập</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="window.location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng 
+                <span id="cart-badge" class="cart-badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="home-banner showcase-banner">
+            <div class="banner-content">
+                <h1>BỘ SƯU TẬP MÙA THU</h1>
+                <p>Thưởng thức trọn vẹn hương vị nồng nàn của Bạc Xỉu Mây Lang Thang mới ra mắt.</p>
+                <a href="menu.html" class="btn-primary">Khám phá ngay</a>
+            </div>
+        </section>
+
+        <!-- Phần Khuyến Mãi -->
+        <section class="home-promotions mini-promo">
+            <div class="promo-container">
+                <div class="promo-item">
+                    <i class="fa-solid fa-ticket"></i> Giảm 25% cho Sinh Viên
+                </div>
+                <div class="promo-item">
+                    <i class="fa-solid fa-gift"></i> Mua 1 tặng 1 Thứ Ba
+                </div>
+            </div>
+        </section>
+
+        <!-- GIỚI THIỆU SẢN PHẨM -->
+        <section class="home-showcase">
+            <div class="section-title">
+                <h2>Tinh Hoa Thức Uống</h2>
+                <p>Những dòng sản phẩm tự hào nhất của Tiệm Cafe Bất Ổn</p>
+            </div>
+
+            <!-- Sản phẩm 1 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/caphesua.jpg" alt="Cà Phê Sữa Đá">
+                </div>
+                <div class="showcase-info">
+                    <h3>Cà Phê Sữa Đá Truyền Thống</h3>
+                    <p class="desc">Sự pha trộn hoàn hảo giữa những hạt cà phê Robusta rang mộc đậm đà và vị ngọt béo của sữa đặc. Mang lại cho bạn sự tỉnh táo và nguồn năng lượng dồi dào cho cả ngày dài.</p>
+                    <p class="price">29.000đ</p>
+                    <button class="btn-add-cart" onclick="alert('Đã thêm Cà Phê Sữa Đá!')">
+                        <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="showcase-row reverse">
+                <div class="showcase-img">
+                    <img src="images/caphetrung.jpg" alt="Cà Phê Trứng Hà Nội">
+                </div>
+                <div class="showcase-info">
+                    <h3>Cà Phê Trứng Hà Nội</h3>
+                    <p class="desc">Lớp kem trứng đánh bông mềm mịn, thơm lừng vị gừng, kết hợp cùng lớp cà phê đen sánh đặc bên dưới. Một trải nghiệm béo ngậy, ấm áp vương vấn mãi trên đầu lưỡi.</p>
+                    <p class="price">40.000đ</p>
+                    <button class="btn-add-cart" onclick="alert('Đã thêm Cà Phê Trứng!')">
+                        <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="showcase-row">
+                <div class="showcase-img">
+                    <img src="images/bacxiu.jpg" alt="Bạc Xỉu Mây Lang Thang">
+                </div>
+                <div class="showcase-info">
+                    <h3>Bạc Xỉu Mây Lang Thang</h3>
+                    <p class="desc">Dành cho những tâm hồn thích vị ngọt dịu của sữa tươi hòa quyện cùng chút đắng nhẹ của cà phê phin. Thức uống hoàn hảo cho những chiều thư giãn nhẹ nhàng.</p>
+                    <p class="price">30.000đ</p>
+                    <button class="btn-add-cart" onclick="alert('Đã thêm Bạc Xỉu!')">
+                        <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="menu.html" class="btn-outline">Xem Tất Cả Menu <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER DÙNG CHUNG -->
+    <footer>
+        <p>&copy; 2026 Tiệm Cafe Bất Ổn. Bài tập lớn Quản lý quán Cafe.</p>
+    </footer>
+
+    <!-- Link file Javascript chung -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực đơn - Tiệm Cafe Bất Ổn</title>
+    
+    <!-- Nhúng thư viện Icon (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Nhúng file CSS chung và CSS riêng của trang Menu -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+    <!-- HEADER DÙNG CHUNG -->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-mug-hot"></i> Cafe Bất Ổn
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="menu.html">Thực đơn</a></li>
+                    <li><a href="reservation.html">Đặt bàn</a></li>
+                    <li><a href="login.html"><i class="fa-solid fa-user"></i> Đăng nhập</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon" onclick="window.location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i> Giỏ hàng 
+                <span id="cart-badge" class="cart-badge">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- NỘI DUNG CHÍNH -->
+    <main>
+        <!-- TIÊU ĐỀ TRANG MENU -->
+        <div class="menu-title-section">
+            <h1>Thực Đơn Của Quán</h1>
+            <p>Khám phá hương vị đặc biệt từ những hạt cà phê rang xay thủ công.</p>
+        </div>
+
+        <!-- BỘ LỌC VÀ Ô TÌM KIẾM -->
+        <div class="controls-row">
+            <div class="filters-group">
+                <button class="filter-btn active" onclick="filterCategory('all', this)">Tất cả</button>
+                <button class="filter-btn" onclick="filterCategory('coffee', this)">Cà Phê</button>
+                <button class="filter-btn" onclick="filterCategory('tea', this)">Trà & Macchiato</button>
+                <button class="filter-btn" onclick="filterCategory('cake', this)">Bánh Ngọt</button>
+            </div>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Tìm kiếm món...">
+            </div>
+        </div>
+
+        <!-- LƯỚI SẢN PHẨM -->
+        <div class="products-grid" id="products-grid-dynamic">
+            <!-- Javascript sẽ tự động "bơm" các món ăn vào khoảng trống này -->
+        </div>
+    </main>
+
+    <!-- CHÂN TRANG -->
+    <footer class="global-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Tiệm Cafe Bất Ổn. Thiết kế bởi Nhóm 6.</p>
+        </div>
+    </footer>
+
+    <!-- Nhúng file Javascript riêng của Menu và file chung -->
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
