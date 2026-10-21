@@ -21,8 +21,8 @@ Hệ thống được xây dựng bằng bộ ba công nghệ chuẩn **HTML5, C
 ## 👥 Thành Viên Thực Hiện & Phân Công Nhiệm Vụ (Nhóm 6)
 | STT | Họ và Tên | Mã Sinh Viên | Vai Trò | Phân Hệ Phụ Trách |
 | :---: | :--- | :---: | :--- | :--- |
-| 1 | **Trang Thành Trung** | 252611091 | **Trưởng nhóm** | **Thực đơn (`menu`) & Khung JS chung (`main.js`):** Lọc danh mục, tìm kiếm trực tiếp, thêm giỏ hàng, thông báo Toast, ghép code và triển khai GitHub Pages. |
-| 2 | **Trần Nam Khánh** | 252601059 | Thành viên | **Trang chủ (`index`) & CSS chung (`style.css`):** Thiết kế bộ khung màu sắc `:root`, Header/Footer dùng chung, giao diện Trang chủ và Responsive. |
+| 1 | **Trang Thành Trung** | 252611091 | **Trưởng nhóm** | **Thực đơn (`menu`)& CSS chung (`style.css`) & Khung JS chung (`main.js`):** Lọc danh mục, tìm kiếm trực tiếp, thêm giỏ hàng, thông báo Toast, ghép code và triển khai GitHub Pages. |
+| 2 | **Trần Nam Khánh** | 252601059 | Thành viên | **Trang chủ (`index`) :** Thiết kế bộ khung màu sắc `:root`, Header/Footer dùng chung, giao diện Trang chủ và Responsive. |
 | 3 | **Nguyễn Đức Lương** | 252631063 | Thành viên | **Đặt bàn trực tuyến (`reservation`):** Tự động sinh khung giờ (`07:00 – 21:30`), kiểm tra ràng buộc dữ liệu, chống trùng lịch và hủy đặt bàn. |
 | 4 | **Đỗ Công Thiện** | 252601089 | Thành viên | **Giỏ hàng & Thanh toán (`cart`):** Tăng/giảm số lượng, xóa món, tự động tính tổng tiền + phí giao hàng (`30.000đ`), kiểm tra form giao hàng và lưu đơn. |
 | 5 | **Nguyễn Lương Thế Vinh** | 252631096 | Thành viên | **Đăng nhập & Quản trị (`login` + `admin`):** Đăng nhập/Đăng ký, phân quyền bảo mật (`guardAdmin`) và quản trị 4 tab (Nhân sự, Kho, Thực đơn & Giá, Doanh thu). |
