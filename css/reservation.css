@@ -1,35 +1,42 @@
 /* ================= 4. CSS TRANG ĐẶT BÀN (reservation.html) ================= */
+
+/* Khối giới thiệu đầu trang */
 .rsv-intro {
-    text-align: center;
-    margin-bottom: 32px;
+    text-align: center;          /* căn chữ vào giữa */
+    margin-bottom: 32px;         /* khoảng trống BÊN NGOÀI, phía dưới */
 }
 
+/* "h1 nằm trong .rsv-intro" (có dấu cách = phần tử con) */
 .rsv-intro h1 {
-    color: var(--primary-color);
-    font-size: 2.2rem;
+    color: var(--primary-color); /* màu chữ, lấy từ biến khai báo ở style.css */
+    font-size: 2.2rem;           /* cỡ chữ (1rem = cỡ gốc, thường 16px) */
     margin-bottom: 8px;
 }
 
 .rsv-intro p {
     color: var(--secondary-color);
-    max-width: 560px;
-    margin: 0 auto;
-    line-height: 1.5;
+    max-width: 560px;            /* rộng tối đa 560px, không tràn hết màn hình */
+    margin: 0 auto;              /* trên/dưới 0, trái/phải auto = căn khối vào giữa */
+    line-height: 1.5;            /* khoảng cách dòng = 1.5 lần cỡ chữ */
 }
 
+/* Khung chia 2 cột: form bên trái, danh sách bên phải */
 .rsv-layout {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 28px;
-    align-items: start;
+    display: grid;                    /* bật bố cục lưới */
+    grid-template-columns: 3fr 2fr;   /* 2 cột, tỉ lệ 3:2 (fr = "phần" của không gian) */
+    gap: 28px;                        /* khoảng cách giữa các ô lưới */
+    align-items: start;               /* mỗi cột cao vừa đủ nội dung, không bị kéo bằng nhau */
 }
 
+/* Thẻ trắng bo góc chứa form và danh sách */
 .rsv-card {
-    background: #FFF;
-    border: 1px solid #E8DDD0;
-    border-radius: 12px;
-    padding: 28px;
+    background: #FFF;                 /* nền (#FFF = #FFFFFF = trắng) */
+    border: 1px solid #E8DDD0;        /* viền: độ dày, kiểu nét liền, màu */
+    border-radius: 12px;              /* bo tròn góc */
+    padding: 28px;                    /* khoảng trống BÊN TRONG, từ viền đến nội dung */
     box-shadow: 0 2px 10px rgba(74, 47, 29, 0.06);
+    /* bóng đổ: lệch ngang | lệch dọc | độ nhòe | màu
+       rgba(r, g, b, độ đục): 0.06 = chỉ còn 6% nên bóng rất nhẹ */
 }
 
 .rsv-card h2 {
@@ -37,139 +44,159 @@
     font-size: 1.25rem;
     margin-bottom: 20px;
     padding-bottom: 12px;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);  /* chỉ kẻ viền cạnh dưới */
 }
 
+/* Một hàng chứa 2 ô cạnh nhau */
 .rsv-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;   /* 2 cột bằng nhau */
     gap: 16px;
 }
 
+/* Một cặp "nhãn + ô nhập + dòng lỗi" */
 .rsv-field {
     margin-bottom: 16px;
 }
 
 .rsv-field label {
-    display: block;
-    font-weight: 600;
+    display: block;                   /* chiếm riêng 1 dòng, ô nhập xuống dòng dưới */
+    font-weight: 600;                 /* độ đậm của chữ */
     font-size: 0.9rem;
     margin-bottom: 6px;
     color: var(--primary-color);
 }
 
+/* Dấu phẩy = áp dụng chung cho cả 3 loại ô */
 .rsv-field input,
 .rsv-field select,
 .rsv-field textarea {
-    width: 100%;
-    padding: 10px 12px;
+    width: 100%;                      /* rộng bằng khung chứa */
+    padding: 10px 12px;               /* 2 giá trị: trên-dưới 10px, trái-phải 12px */
     border: 1px solid #D6C8B8;
     border-radius: 8px;
     background: var(--bg-color);
     color: var(--text-dark);
     font-size: 1rem;
-    transition: var(--transition);
+    transition: var(--transition);    /* khi đổi màu/viền thì chuyển mượt, không giật */
 }
 
-.rsv-field textarea { resize: vertical; }
+.rsv-field textarea { resize: vertical; }   /* chỉ cho kéo to theo chiều dọc */
 
+/* :focus = khi ô đang được chọn (con trỏ nằm trong ô) */
 .rsv-field input:focus,
 .rsv-field select:focus,
 .rsv-field textarea:focus {
-    outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(178, 83, 41, 0.2);
+    outline: none;                    /* bỏ viền xanh mặc định của trình duyệt */
+    border-color: var(--accent-color);              /* đổi màu viền sang cam */
+    box-shadow: 0 0 0 3px rgba(178, 83, 41, 0.2);   /* không lệch, không nhòe, dày 3px = vòng sáng cam bao quanh */
 }
 
+/* ".rsv-field.has-error" dính liền = thẻ có CẢ HAI class.
+   Viền đỏ cho ô lỗi (hiện JS chưa gắn class has-error nên chưa dùng tới) */
 .rsv-field.has-error input,
 .rsv-field.has-error select {
     border-color: #C0392B;
 }
 
+/* Dòng chữ báo lỗi dưới mỗi ô */
 .rsv-error {
     display: block;
-    min-height: 1.1em;
+    min-height: 1.1em;                /* giữ sẵn chỗ để khi lỗi hiện ra form không bị giật xuống */
     margin-top: 4px;
     font-size: 0.8rem;
-    color: #C0392B;
+    color: #C0392B;                   /* đỏ */
 }
 
+/* Nút "Xác nhận đặt bàn" */
 .rsv-btn {
     width: 100%;
     padding: 13px;
-    border: none;
+    border: none;                     /* bỏ viền mặc định của nút */
     border-radius: 8px;
     background: var(--accent-color);
     color: #FFF;
     font-size: 1.05rem;
     font-weight: 600;
-    cursor: pointer;
+    cursor: pointer;                  /* rê chuột vào thì con trỏ thành bàn tay */
     transition: var(--transition);
 }
 
-.rsv-btn:hover { background: var(--secondary-color); }
+.rsv-btn:hover { background: var(--secondary-color); }   /* :hover = khi rê chuột lên */
 .rsv-btn:focus-visible { outline: 3px solid var(--primary-color); outline-offset: 2px; }
+/* :focus-visible = chỉ hiện khi chọn bằng phím Tab; outline-offset = cách nút 2px */
 
+/* Thông báo đặt bàn thành công */
 .rsv-success {
-    display: flex;
+    display: flex;                    /* xếp các con thành 1 hàng ngang: icon | chữ */
     gap: 14px;
-    align-items: flex-start;
+    align-items: flex-start;          /* canh theo mép trên */
     margin-top: 20px;
     padding: 16px;
     border-radius: 8px;
-    background: #EAF5EA;
+    background: #EAF5EA;              /* xanh lá rất nhạt */
     border: 1px solid #9CCB9C;
-    color: #2D5A2D;
+    color: #2D5A2D;                   /* chữ xanh lá đậm */
 }
 
+/* BẮT BUỘC: .rsv-success đã có display:flex nên sẽ ghi đè luật ẩn mặc định
+   của thuộc tính hidden. Dòng này viết lại để hidden có tác dụng.
+   [hidden] = chọn phần tử theo thuộc tính */
 .rsv-success[hidden] { display: none; }
-.rsv-success i { font-size: 1.6rem; margin-top: 2px; }
+.rsv-success i { font-size: 1.6rem; margin-top: 2px; }    /* icon dấu tick */
 .rsv-success p { margin-top: 4px; line-height: 1.5; }
 
+/* Dòng "Bạn chưa có lượt đặt bàn nào" */
 .rsv-empty {
     color: var(--secondary-color);
     line-height: 1.5;
 }
 
+/* Danh sách các lượt đặt bàn */
 .rsv-list {
-    list-style: none;
+    list-style: none;                 /* bỏ chấm tròn đầu mỗi <li> */
     display: flex;
-    flex-direction: column;
+    flex-direction: column;           /* xếp dọc (mặc định flex xếp ngang) */
     gap: 12px;
 }
 
+/* Một lượt đặt bàn */
 .rsv-item {
     border: 1px solid #E8DDD0;
-    border-left: 4px solid var(--accent-color);
+    border-left: 4px solid var(--accent-color);   /* ghi đè riêng cạnh trái: dày 4px, màu cam */
     border-radius: 8px;
     padding: 12px 14px;
     background: var(--bg-color);
 }
 
+/* Lượt đã hủy (phần tử có cả 2 class rsv-item và cancelled) */
 .rsv-item.cancelled {
-    border-left-color: #A9A9A9;
-    opacity: 0.65;
+    border-left-color: #A9A9A9;       /* chỉ đổi màu của cạnh trái, thành xám */
+    opacity: 0.65;                    /* độ đục: 1 = rõ hẳn, 0.65 = mờ đi 35% */
 }
 
+/* Hàng đầu của mỗi mục: mã đặt bàn (trái) và trạng thái (phải) */
 .rsv-item-top {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between;   /* đẩy phần tử đầu về mép trái, phần tử cuối về mép phải */
+    align-items: center;              /* canh giữa theo chiều dọc */
     gap: 8px;
     margin-bottom: 6px;
 }
 
 .rsv-code { font-weight: 700; color: var(--primary-color); }
 
+/* Huy hiệu trạng thái hình viên thuốc */
 .rsv-status {
     font-size: 0.75rem;
     font-weight: 600;
     padding: 2px 10px;
-    border-radius: 12px;
+    border-radius: 12px;              /* bo lớn nên thành hình viên thuốc */
     background: #FFF1DC;
     color: var(--accent-color);
 }
 
+/* ".rsv-status nằm TRONG .rsv-item.cancelled" (có dấu cách) */
 .rsv-item.cancelled .rsv-status { background: #EEE; color: #666; }
 
 .rsv-item p {
@@ -177,25 +204,28 @@
     line-height: 1.5;
 }
 
+/* Nút "Hủy đặt bàn" */
 .rsv-cancel {
     margin-top: 8px;
     padding: 4px 12px;
     border: 1px solid #C0392B;
     border-radius: 6px;
-    background: transparent;
+    background: transparent;          /* nền trong suốt */
     color: #C0392B;
     font-size: 0.85rem;
     cursor: pointer;
     transition: var(--transition);
 }
 
-.rsv-cancel:hover { background: #C0392B; color: #FFF; }
+.rsv-cancel:hover { background: #C0392B; color: #FFF; }   /* rê chuột: đảo màu */
 
+/* RESPONSIVE: @media (max-width: 900px) = chỉ áp dụng khi màn hình rộng từ 900px trở xuống */
 @media (max-width: 900px) {
-    .rsv-layout { grid-template-columns: 1fr; }
+    .rsv-layout { grid-template-columns: 1fr; }   /* còn 1 cột, form và danh sách xếp chồng */
 }
 
+/* Màn hình điện thoại (từ 520px trở xuống) */
 @media (max-width: 520px) {
-    .rsv-row { grid-template-columns: 1fr; gap: 0; }
-    .rsv-card { padding: 20px; }
+    .rsv-row { grid-template-columns: 1fr; gap: 0; }   /* các cặp ô xếp dọc; gap 0 vì .rsv-field đã có margin-bottom */
+    .rsv-card { padding: 20px; }                        /* bớt đệm cho đỡ chật */
 }
