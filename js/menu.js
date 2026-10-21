@@ -14,7 +14,7 @@ const defaultProducts = [
     { id: 15, name: "Cappuccino Nghệ Thuật", price: 45000, category: "coffee", img: "https://images.unsplash.com/photo-1534778101976-62847782c213?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" },
     { id: 16, name: "Mocha Đá Xay", price: 55000, category: "coffee", img: "https://images.unsplash.com/photo-1578314675249-a6910f80cc4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" },
     { id: 17, name: "Flat White", price: 40000, category: "coffee", img: "https://delonghi.vn/wp-content/uploads/2025/07/GettyImages-1155505160-scaled-e1612518804183.jpg" },
-    { id: 18, name: "Cold Brew Ủ Lạnh", price: 50000, category: "coffee", img: "https://kingcoffee.com.vn/wp-content/uploads/2025/12/cach-pha-cold-brew-1536x690.jpg" },
+    { id: 18, name: "Cold Brew Ủ Lạnh", price: 50000, category: "coffee", img: "https://lifesimplified.gorenje.com/wp-content/uploads/2024/06/gorenje-blog-refreshing_cold_brew_coffee.jpg" },
 
     // --- DANH MỤC TRÀ ---
     { id: 6, name: "Trà Đào Cam Sả", price: 45000, category: "tea", img: "https://cooponline.vn/tin-tuc/wp-content/uploads/2025/10/tra-dao-cam-sa-cong-thuc-pha-che-chuan-vi.png" },
